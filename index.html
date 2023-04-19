@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <title>Zoom</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="i">
+    <img src="n.jpg" width="300px" height="300px">
+    </div>
+    <div id="b">
+        <button onclick="zoomout()">Zoom out</button>
+        <button onclick="zoomin()">Zoom in</button>
+        <button onclick="prev()">prev</button>
+        <button onclick="next()">next</button>
+    </div>
+    <script>
+        let img=document.getElementsByTagName("img")[0];
+        function zoomout(){
+            let height=img.height;
+            let width=img.width;
+            img.height=height+(height*0.1);
+            img.width=width+(width*0.1);
+        }
+        function zoomin(){
+            let height=img.height;
+            let width=img.width;
+            img.height=height-(height*0.1);
+            img.width=width-(width*0.1);
+        }
+        let count=1;
+        //let imgpath="item"+count+".jpg";
+        let images=["cpizza.jpg","pizza.jpg","salad.jpg","samber.jpg","stock-photo-142984111-1500x1000.jpg","n.jpg"]
+        img.src=imges[0];
+        function prev(){
+                if(count!=1)
+                    count--;
+                imgpath=images[count];
+                img.src=imgpath;
+        }
+        function next(){
+                if(count!=5)
+                    count++;
+                imgpath=images[count];
+                img.src=imgpath;
+        }
+    </script>
+</body>
+</html>
